@@ -10,6 +10,7 @@
     "build": "vite build client && esbuild server/index.ts --bundle --platform=node --format=esm --outfile=dist/server/index.js --external:@neondatabase/serverless --external:drizzle-orm",
     "start": "node dist/server/index.js",
     "db:push": "drizzle-kit push"
+    "postinstall": "tailwindcss init -p"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.4",
