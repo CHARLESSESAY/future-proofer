@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0033A0; /* Royal Blue */
+  --secondary: #00B5E2; /* Cyan */
+}
