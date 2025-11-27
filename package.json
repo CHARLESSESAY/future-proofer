@@ -1,0 +1,42 @@
+{
+  "name": "future-proofer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"tsx server/index.ts\" \"vite client\"",
+    "dev:server": "tsx server/index.ts",
+    "dev:client": "vite client",
+    "build": "vite build client && esbuild server/index.ts --bundle --platform=node --format=esm --outfile=dist/server/index.js --external:@neondatabase/serverless --external:drizzle-orm",
+    "start": "node dist/server/index.js",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.39.1",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.453.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "recharts": "^2.15.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.25",
+    "@types/node": "^20.19.24",
+    "@types/react": "^18.3.11",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.1",
+    "drizzle-kit": "^0.31.4",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^3.4.18",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  }
+}
